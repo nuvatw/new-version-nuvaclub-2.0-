@@ -1,0 +1,810 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI 線上學習平台｜會員權益比較</title>
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --panel: #12151a;
+      --panel-2: #171b22;
+      --text: #f4f6fb;
+      --muted: #a7adb8;
+      --line: rgba(255,255,255,.10);
+      --line-strong: rgba(255,255,255,.18);
+      --accent: #8b5cf6;
+      --accent-2: #22c55e;
+      --warn: #f59e0b;
+      --danger: #ef4444;
+      --blue: #38bdf8;
+      --shadow: 0 24px 80px rgba(0,0,0,.42);
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --radius-sm: 999px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 18% 10%, rgba(139,92,246,.22), transparent 32%),
+        radial-gradient(circle at 78% 0%, rgba(56,189,248,.16), transparent 30%),
+        linear-gradient(180deg, #08090c 0%, var(--bg) 52%, #07080a 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    .page {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 56px 0 72px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 24px;
+      align-items: stretch;
+      margin-bottom: 28px;
+    }
+
+    .hero-card,
+    .side-card,
+    .section-card {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.035));
+      box-shadow: var(--shadow);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .hero-card {
+      padding: 36px;
+      position: relative;
+      min-height: 320px;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      right: -70px;
+      top: -90px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(139,92,246,.45), transparent 68%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      color: #d8ccff;
+      background: rgba(139,92,246,.12);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 22px 0 16px;
+      max-width: 760px;
+      font-size: clamp(34px, 5vw, 64px);
+      line-height: 1.04;
+      letter-spacing: -0.04em;
+    }
+
+    .lead {
+      margin: 0;
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      color: #e6e8ef;
+      font-size: 14px;
+      font-weight: 650;
+      white-space: nowrap;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 24px rgba(139,92,246,.65);
+    }
+
+    .side-card {
+      padding: 24px;
+      background: linear-gradient(180deg, rgba(23,27,34,.92), rgba(18,21,26,.88));
+    }
+
+    .side-card h2 {
+      margin: 0 0 16px;
+      font-size: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .plan-stack {
+      display: grid;
+      gap: 12px;
+    }
+
+    .mini-plan {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: rgba(255,255,255,.045);
+    }
+
+    .mini-plan strong {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 15px;
+    }
+
+    .mini-plan span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .section-card {
+      margin-top: 24px;
+      background: rgba(18,21,26,.82);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 28px 30px 22px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-header h2 {
+      margin: 0;
+      font-size: 26px;
+      letter-spacing: -0.03em;
+    }
+
+    .section-header p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      max-width: 680px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      min-width: 920px;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 18px 18px;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background: #11141a;
+      color: #ffffff;
+      font-size: 15px;
+      letter-spacing: .02em;
+    }
+
+    th:first-child,
+    td:first-child {
+      width: 128px;
+      color: #e9ecf4;
+      font-weight: 800;
+    }
+
+    th:nth-child(2),
+    td:nth-child(2) {
+      width: 210px;
+      color: #f2f4f8;
+      font-weight: 760;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    td {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .plan-head {
+      display: grid;
+      gap: 4px;
+    }
+
+    .plan-head b {
+      font-size: 17px;
+      letter-spacing: -0.01em;
+    }
+
+    .plan-head small {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 10px;
+      border-radius: var(--radius-sm);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .02em;
+      margin-bottom: 8px;
+      white-space: nowrap;
+    }
+
+    .tag.ok { color: #b9f6ca; background: rgba(34,197,94,.14); border: 1px solid rgba(34,197,94,.28); }
+    .tag.limited { color: #ffe3ad; background: rgba(245,158,11,.13); border: 1px solid rgba(245,158,11,.28); }
+    .tag.no { color: #ffc6c6; background: rgba(239,68,68,.12); border: 1px solid rgba(239,68,68,.24); }
+    .tag.view { color: #b9edff; background: rgba(56,189,248,.12); border: 1px solid rgba(56,189,248,.24); }
+
+    .cell-title {
+      display: block;
+      color: #ffffff;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .cell-note {
+      display: block;
+      color: var(--muted);
+    }
+
+    .highlight-col {
+      background: linear-gradient(180deg, rgba(139,92,246,.12), rgba(139,92,246,.045));
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 18px 30px 28px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      padding: 30px;
+    }
+
+    .plan-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      background: rgba(255,255,255,.045);
+      min-height: 240px;
+    }
+
+    .plan-card.featured {
+      border-color: rgba(139,92,246,.46);
+      background: linear-gradient(180deg, rgba(139,92,246,.18), rgba(255,255,255,.045));
+    }
+
+    .plan-card h3 {
+      margin: 0 0 8px;
+      font-size: 21px;
+      letter-spacing: -0.02em;
+    }
+
+    .plan-card .subtitle {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .plan-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: #d6dae4;
+      font-size: 14px;
+    }
+
+    .plan-card li + li { margin-top: 8px; }
+
+    .qa-list {
+      display: grid;
+      gap: 12px;
+      padding: 30px;
+    }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: rgba(255,255,255,.04);
+      padding: 18px 20px;
+    }
+
+    summary {
+      cursor: pointer;
+      color: #ffffff;
+      font-weight: 850;
+      letter-spacing: -0.01em;
+    }
+
+    details p {
+      margin: 12px 0 0;
+      color: var(--muted);
+    }
+
+    .footer-note {
+      margin-top: 22px;
+      color: rgba(244,246,251,.68);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 960px) {
+      .hero { grid-template-columns: 1fr; }
+      .cards-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 620px) {
+      .page { width: min(100% - 24px, 1180px); padding-top: 28px; }
+      .hero-card { padding: 26px; }
+      .section-header { display: block; padding: 24px 22px 18px; }
+      .cards-grid, .qa-list { grid-template-columns: 1fr; padding: 22px; }
+      .legend { padding: 16px 22px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-card">
+        <span class="eyebrow"><span class="dot"></span> AI Learning Platform</span>
+        <h1 id="page-title">四種身份權益與功能開放規格</h1>
+        <p class="lead">
+          平台分為四種身份：Guest 訪客、Free 免費會員、Solo 個人學習、Duo 夥伴學習。
+          權益設計可以理解成一條清楚的升級路徑：Guest 負責預覽、Free 負責免費內容與基礎互動、Solo 解鎖完整個人學習，Duo 則在 Solo 之上加入 Space 夥伴配對與 AI 助教。
+        </p>
+        <div class="hero-actions" aria-label="重點摘要">
+          <span class="pill">Guest：預覽內容，降低第一次進站門檻</span>
+          <span class="pill">Free：免費課程 + 基礎社群互動</span>
+          <span class="pill">Solo：完整課程、測驗、發文與作品參與</span>
+          <span class="pill">Duo：Solo 全部權益 + Space 完整權限</span>
+        </div>
+      </div>
+
+      <aside class="side-card" aria-label="身份定位">
+        <h2>身份定位</h2>
+        <div class="plan-stack">
+          <div class="mini-plan">
+            <strong>Guest <span>訪客</span></strong>
+            <span>不需登入或尚未加入會員，主要用於預覽平台內容。</span>
+          </div>
+          <div class="mini-plan">
+            <strong>Free <span>免費會員</span></strong>
+            <span>可觀看免費課程，並在 Forum 進行按讚與留言。</span>
+          </div>
+          <div class="mini-plan">
+            <strong>Solo <span>個人學習</span></strong>
+            <span>完整學習課程、使用 Test、發文、參與 Sprint。</span>
+          </div>
+          <div class="mini-plan">
+            <strong>Duo <span>夥伴學習</span></strong>
+            <span>包含 Solo 的完整權益，並解鎖 Space 配對、夥伴學習與 AI 助教。</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section-card" aria-labelledby="comparison-title">
+      <div class="section-header">
+        <div>
+          <h2 id="comparison-title">權限規格總表</h2>
+          <p>建議作為產品規格與工程權限判斷的主表：每一列代表一個功能場景，每一欄代表使用者身份，團隊可直接依此設計顯示、鎖定與升級提示。</p>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table aria-label="會員權益比較表">
+          <thead>
+            <tr>
+              <th>場域</th>
+              <th>功能</th>
+              <th>
+                <span class="plan-head"><b>Guest</b><small>訪客</small></span>
+              </th>
+              <th>
+                <span class="plan-head"><b>Free</b><small>免費會員</small></span>
+              </th>
+              <th>
+                <span class="plan-head"><b>Solo</b><small>個人學習</small></span>
+              </th>
+              <th class="highlight-col">
+                <span class="plan-head"><b>Duo</b><small>夥伴學習</small></span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Learn</td>
+              <td>課程觀看權限</td>
+              <td>
+                <span class="tag limited">限制開放</span>
+                <span class="cell-title">只能預覽免費課程</span>
+                <span class="cell-note">每個免費課程章節僅可觀看第一個單元／第一支影片，用於體驗內容品質。</span>
+              </td>
+              <td>
+                <span class="tag ok">可使用</span>
+                <span class="cell-title">可看所有免費課程</span>
+                <span class="cell-note">免費課程不限制章節與單元觀看。</span>
+              </td>
+              <td>
+                <span class="tag ok">完整開放</span>
+                <span class="cell-title">可看免費與付費課程</span>
+                <span class="cell-note">開放整個平台的學習內容。</span>
+              </td>
+              <td class="highlight-col">
+                <span class="tag ok">完整開放</span>
+                <span class="cell-title">可看免費與付費課程</span>
+                <span class="cell-note">與 Solo 相同，開放整個平台的學習內容。</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Test</td>
+              <td>自我測驗與申請流程</td>
+              <td>
+                <span class="tag no">不可使用</span>
+                <span class="cell-title">無法進入 Test</span>
+                <span class="cell-note">可導向登入或升級提示。</span>
+              </td>
+              <td>
+                <span class="tag no">不可使用</span>
+                <span class="cell-title">無法使用測驗功能</span>
+                <span class="cell-note">建議顯示升級至 Solo 或 Duo 的 CTA。</span>
+              </td>
+              <td>
+                <span class="tag ok">可使用</span>
+                <span class="cell-title">可進行自我測驗</span>
+                <span class="cell-note">可使用 Test 進行學習檢核，並進入平台設定的後續申請流程。</span>
+              </td>
+              <td class="highlight-col">
+                <span class="tag ok">可使用</span>
+                <span class="cell-title">可進行自我測驗</span>
+                <span class="cell-note">與 Solo 相同，可使用 Test 與後續申請流程。</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Forum</td>
+              <td>瀏覽 Post / Wiki</td>
+              <td>
+                <span class="tag view">可瀏覽</span>
+                <span class="cell-title">可看公開內容</span>
+                <span class="cell-note">只能閱讀與瀏覽，不可互動。</span>
+              </td>
+              <td>
+                <span class="tag ok">可瀏覽</span>
+                <span class="cell-title">可看公開內容</span>
+                <span class="cell-note">可進入論壇閱讀內容。</span>
+              </td>
+              <td>
+                <span class="tag ok">可瀏覽</span>
+                <span class="cell-title">可看公開內容</span>
+                <span class="cell-note">可閱讀論壇內容與 Wiki。</span>
+              </td>
+              <td class="highlight-col">
+                <span class="tag ok">可瀏覽</span>
+                <span class="cell-title">可看公開內容</span>
+                <span class="cell-note">與 Solo 相同。</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Forum</td>
+              <td>按讚 / 留言</td>
+              <td>
+                <span class="tag no">不可互動</span>
+                <span class="cell-title">只能瀏覽</span>
+                <span class="cell-note">互動時顯示登入或註冊提示。</span>
+              </td>
+              <td>
+                <span class="tag ok">可互動</span>
+                <span class="cell-title">可按讚與留言</span>
+                <span class="cell-note">免費會員可參與基礎社群互動。</span>
+              </td>
+              <td>
+                <span class="tag ok">可互動</span>
+                <span class="cell-title">可按讚與留言</span>
+                <span class="cell-note">完整社群互動權限。</span>
+              </td>
+              <td class="highlight-col">
+                <span class="tag ok">可互動</span>
+                <span class="cell-title">可按讚與留言</span>
+                <span class="cell-note">與 Solo 相同。</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Forum</td>
+              <td>發 Post</td>
+              <td>
+                <span class="tag no">不可使用</span>
+                <span class="cell-title">不可發文</span>
+                <span class="cell-note">點擊發文可顯示登入或升級提示。</span>
+              </td>
+              <td>
+                <span class="tag no">不可使用</span>
+                <span class="cell-title">不可發文</span>
+                <span class="cell-note">若想發文，需升級至 Solo 或 Duo。</span>
+              </td>
+              <td>
+                <span class="tag ok">可使用</span>
+                <span class="cell-title">可發表 Post</span>
+                <span class="cell-note">可主動分享學習心得、提問或作品紀錄。</span>
+              </td>
+              <td class="highlight-col">
+                <span class="tag ok">可使用</span>
+                <span class="cell-title">可發表 Post</span>
+                <span class="cell-note">與 Solo 相同。</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Sprint</td>
+              <td>瀏覽作品</td>
+              <td>
+                <span class="tag view">可瀏覽</span>
+                <span class="cell-title">可逛作品</span>
+                <span class="cell-note">可觀看大家上傳的作品，但不能操作任何行為。</span>
+              </td>
+              <td>
+                <span class="tag view">可瀏覽</span>
+                <span class="cell-title">可逛作品</span>
+                <span class="cell-note">可瀏覽作品，但不可上傳或投票。</span>
+              </td>
+              <td>
+                <span class="tag ok">可瀏覽</span>
+                <span class="cell-title">可逛作品</span>
+                <span class="cell-note">可觀看 Sprint 作品與官方題目。</span>
+              </td>
+              <td class="highlight-col">
+                <span class="tag ok">可瀏覽</span>
+                <span class="cell-title">可逛作品</span>
+                <span class="cell-note">與 Solo 相同。</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Sprint</td>
+              <td>上傳作品 / 投票</td>
+              <td>
+                <span class="tag no">不可操作</span>
+                <span class="cell-title">不可上傳、不可投票</span>
+                <span class="cell-note">互動行為需升級。</span>
+              </td>
+              <td>
+                <span class="tag no">不可操作</span>
+                <span class="cell-title">不可上傳、不可投票</span>
+                <span class="cell-note">可作為觀摩作品的入口。</span>
+              </td>
+              <td>
+                <span class="tag ok">可參與</span>
+                <span class="cell-title">可上傳作品與投票</span>
+                <span class="cell-note">可依官方題目提交作品，也可為其他人的作品投票。</span>
+              </td>
+              <td class="highlight-col">
+                <span class="tag ok">可參與</span>
+                <span class="cell-title">可上傳作品與投票</span>
+                <span class="cell-note">與 Solo 相同，可完整參與 Sprint 線上互動。</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Space</td>
+              <td>瀏覽可配對夥伴</td>
+              <td>
+                <span class="tag view">可瀏覽</span>
+                <span class="cell-title">可看名單與自我介紹</span>
+                <span class="cell-note">只能預覽可配對的人與個人介紹。</span>
+              </td>
+              <td>
+                <span class="tag view">可瀏覽</span>
+                <span class="cell-title">可看名單與自我介紹</span>
+                <span class="cell-note">可了解 Space 的配對情境，但不能送出配對。</span>
+              </td>
+              <td>
+                <span class="tag view">可瀏覽</span>
+                <span class="cell-title">可看名單與自我介紹</span>
+                <span class="cell-note">Solo 可預覽 Space，但不能實際配對。</span>
+              </td>
+              <td class="highlight-col">
+                <span class="tag ok">完整開放</span>
+                <span class="cell-title">可瀏覽並進行配對</span>
+                <span class="cell-note">可查看夥伴資料並送出／接受配對。</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Space</td>
+              <td>配對 / AI 助教</td>
+              <td>
+                <span class="tag no">不可使用</span>
+                <span class="cell-title">點擊配對時提示升級</span>
+                <span class="cell-note">建議文案：升級 Duo，開啟夥伴學習與 AI 助教。</span>
+              </td>
+              <td>
+                <span class="tag no">不可使用</span>
+                <span class="cell-title">點擊配對時提示升級</span>
+                <span class="cell-note">升級 Duo 後才可使用完整 Space。</span>
+              </td>
+              <td>
+                <span class="tag no">不可使用</span>
+                <span class="cell-title">點擊配對時提示升級</span>
+                <span class="cell-note">Solo 與 Duo 的主要差異：Solo 不含 Space 配對與 AI 助教。</span>
+              </td>
+              <td class="highlight-col">
+                <span class="tag ok">完整開放</span>
+                <span class="cell-title">可配對夥伴並使用 AI 助教</span>
+                <span class="cell-note">Duo 是唯一能完整使用 Space 的身份。</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="legend" aria-label="表格標示說明">
+        <span class="tag ok">可使用 / 完整開放</span>
+        <span class="tag view">可瀏覽</span>
+        <span class="tag limited">限制開放</span>
+        <span class="tag no">不可使用</span>
+      </div>
+    </section>
+
+    <section class="section-card" aria-labelledby="plan-copy-title">
+      <div class="section-header">
+        <div>
+          <h2 id="plan-copy-title">四種身份的產品定位</h2>
+          <p>以下文字可直接提供給設計、工程、行銷與客服團隊，作為頁面文案、權限判斷與升級提示的共同基準。</p>
+        </div>
+      </div>
+
+      <div class="cards-grid">
+        <article class="plan-card">
+          <h3>Guest｜訪客</h3>
+          <p class="subtitle">適合尚未註冊、正在了解平台的新使用者。</p>
+          <ul>
+            <li>可預覽免費課程的第一個單元／第一支影片。</li>
+            <li>可瀏覽 Forum 內容與 Sprint 作品。</li>
+            <li>可查看 Space 中可配對的夥伴與自我介紹。</li>
+            <li>不能測驗、留言、發文、上傳、投票或配對。</li>
+          </ul>
+        </article>
+
+        <article class="plan-card">
+          <h3>Free｜免費會員</h3>
+          <p class="subtitle">適合想先完整體驗免費學習內容的使用者。</p>
+          <ul>
+            <li>可觀看 Learn 中所有免費課程。</li>
+            <li>可在 Forum 按讚與留言。</li>
+            <li>可瀏覽 Sprint 作品，但不能上傳或投票。</li>
+            <li>可預覽 Space，但不能進行配對或使用 AI 助教。</li>
+          </ul>
+        </article>
+
+        <article class="plan-card">
+          <h3>Solo｜個人學習</h3>
+          <p class="subtitle">適合想完整學習課程、測驗與參與社群創作的人。</p>
+          <ul>
+            <li>可觀看全平台免費與付費課程。</li>
+            <li>可使用 Test 進行自我測驗與後續申請流程。</li>
+            <li>可在 Forum 發文、按讚與留言。</li>
+            <li>可參與 Sprint，上傳作品並為他人作品投票。</li>
+            <li>可預覽 Space，但不能配對或使用 AI 助教。</li>
+          </ul>
+        </article>
+
+        <article class="plan-card featured">
+          <h3>Duo｜夥伴學習</h3>
+          <p class="subtitle">適合想要完整平台權限，並透過學習夥伴與 AI 助教提高持續學習動力的人。</p>
+          <ul>
+            <li>包含 Solo 的所有權益。</li>
+            <li>可觀看全平台免費與付費課程。</li>
+            <li>可使用 Test、Forum 發文與 Sprint 上傳／投票。</li>
+            <li>可完整使用 Space：查看夥伴資訊、送出／接受配對、使用 AI 助教。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-card" aria-labelledby="qa-title">
+      <div class="section-header">
+        <div>
+          <h2 id="qa-title">常見 Q&A</h2>
+          <p>可用於客服回覆、產品規格文件，或放在方案比較頁的下方。</p>
+        </div>
+      </div>
+
+      <div class="qa-list">
+        <details open>
+          <summary>Q1. Solo 和 Duo 最大的差別是什麼？</summary>
+          <p>Solo 和 Duo 在 Learn、Test、Forum、Sprint 的權益相同；唯一核心差異在 Space。Solo 可以預覽配對名單與自我介紹，但不能送出配對；Duo 才能實際配對學習夥伴，並使用 AI 助教。</p>
+        </details>
+
+        <details>
+          <summary>Q2. Guest 可以看哪些課程？</summary>
+          <p>Guest 只能預覽免費課程中每個章節的第一個單元／第一支影片。若想完整觀看所有免費課程，需要成為 Free 會員；若想觀看付費課程，需升級至 Solo 或 Duo。</p>
+        </details>
+
+        <details>
+          <summary>Q3. Free 會員可以發 Forum 文章嗎？</summary>
+          <p>不可以。Free 會員可以在 Forum 按讚與留言，但不能發表 Post。發文權限從 Solo 開始開放，Duo 也可以發文。</p>
+        </details>
+
+        <details>
+          <summary>Q4. Test 功能開放給哪些身份？</summary>
+          <p>Test 僅開放給 Solo 與 Duo。Guest 與 Free 不能使用 Test，可在點擊時顯示升級提示，引導升級至 Solo 或 Duo。</p>
+        </details>
+
+        <details>
+          <summary>Q5. Sprint 的作品上傳與投票誰可以使用？</summary>
+          <p>Guest 與 Free 只能瀏覽 Sprint 作品；Solo 與 Duo 可以依官方題目上傳自己的作品，也可以為其他人的作品投票。實體交流活動可依活動規則另行設定報名資格。</p>
+        </details>
+
+        <details>
+          <summary>Q6. 使用者在 Space 按下配對，但身份不是 Duo 時，應該怎麼處理？</summary>
+          <p>Guest、Free、Solo 都可以看到可配對的人與自我介紹，但不能送出配對。當這三種身份點擊配對按鈕時，建議顯示升級提示：「升級 Duo，開啟夥伴學習、配對功能與 AI 助教。」</p>
+        </details>
+
+        <details>
+          <summary>Q7. 付費課程誰可以觀看？</summary>
+          <p>付費課程只開放給 Solo 與 Duo。Guest 只能預覽免費課程的部分內容，Free 只能觀看免費課程。</p>
+        </details>
+      </div>
+    </section>
+
+    <p class="footer-note">Version draft｜已依 Guest / Free / Solo / Duo 四種身份整理。正式上線前可再補上價格、CTA 文案與實際升級連結。</p>
+  </main>
+</body>
+</html>
